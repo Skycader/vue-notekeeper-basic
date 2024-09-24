@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link rel="stylesheet" href="theme.css" />
+  </head>
+  <body>
+    <div class="container pt-5" id="app">
+      <div class="card">
+        <h1>Мои заметки</h1>
+
+        <div class="form-control">
+          <input
+            type="text"
+            :placeholder="placeholder"
+            :value="inputValue"
+            @input="inputHandler"
+            @keypress.enter="addNote"
+          />
+        </div>
+
+        <button class="btn" v-if="inputValue" @click="addNote">Добавить</button>
+
+        <hr />
+
+        <ul class="list" v-if="notes.length !== 0">
+          <li class="list-item" v-for="(note, idx) of notes">
+            ({{idx}}) {{toUpperCase(note.title)}}
+            <button class="btn danger" @click="removeNote(note.id)">
+              Удалить
+            </button>
+          </li>
+        </ul>
+        <div v-else>У вас пока нет заметок.</div>
+      </div>
+    </div>
+
+    <script src="vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
