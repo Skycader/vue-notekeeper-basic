@@ -26,6 +26,16 @@ const App = {
       this.notes = this.notes.filter((note) => note.id !== id);
     },
   },
+  computed: {
+    doubleNotesComputed() {
+      return this.notes.length * 2;
+    },
+  },
+  watch: {
+    inputValue(value) {
+      if (value.length > 10) this.inputValue = this.inputValue.slice(0, 10);
+    },
+  },
 };
 
 const app = Vue.createApp(App);

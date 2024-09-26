@@ -15,8 +15,7 @@
           <input
             type="text"
             :placeholder="placeholder"
-            :value="inputValue"
-            @input="inputHandler"
+            v-model="inputValue"
             @keypress.enter="addNote"
           />
         </div>
@@ -34,6 +33,8 @@
           </li>
         </ul>
         <div v-else>У вас пока нет заметок.</div>
+
+        <div>Всего заметок {{notes.length}} | {{doubleNotesComputed}}</div>
       </div>
     </div>
 
