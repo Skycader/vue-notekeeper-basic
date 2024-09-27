@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vue Basics</title>
     <link rel="stylesheet" href="theme.css" />
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <div class="container pt-5" id="app">
+    <div class="container pt-5" id="app" v-cloak>
       <div class="card">
         <h1>Мои заметки</h1>
 
