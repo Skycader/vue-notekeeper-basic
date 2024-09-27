@@ -20,7 +20,13 @@
           />
         </div>
 
-        <button class="btn" v-if="inputValue" @click="addNote">Добавить</button>
+        <button
+          class="btn"
+          :class="inputValue.length === 0 ? 'danger' : ''"
+          @click="addNote"
+        >
+          Добавить
+        </button>
 
         <hr />
 
